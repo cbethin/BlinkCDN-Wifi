@@ -29,6 +29,7 @@ func getBandwidthArray(id string) map[string]int {
 		// If the device has received packets, then sum up the bytes received
 		// in the last 5 seconds
 		if pktList, ok := routers[id].ReceivedPackets[dev.ip]; ok {
+			fmt.Println(dev.ip, "--", len(pktList))
 			for _, pkt := range pktList {
 				if time.Since(pkt.timestamp) <= 5*time.Second {
 					bytesReceived += getBandwidthFromPacket(pkt.data)
@@ -40,8 +41,9 @@ func getBandwidthArray(id string) map[string]int {
 	}
 
 	// For all packets, loop through and add in the ones from 192.168
+	// USE FOR TESTING ON LOCALHOST
 	// for addr, pktList := range routers[id].ReceivedPackets {
-	// 	if strings.Contains(addr, "192.168") {
+	// 	if strings.Contains(addr, "10.1.") {
 	// 		bytesReceived := 0
 	// 		for _, pkt := range pktList {
 	// 			if time.Since(pkt.timestamp) <= 5*time.Second {
@@ -49,7 +51,7 @@ func getBandwidthArray(id string) map[string]int {
 	// 			}
 	// 		}
 
-	// 		ipBandwidths[addr] = bytesReceived
+	// 		ipBandwidths[addr] = bytesReceived / 5
 	// 	}
 	// }
 

@@ -12,6 +12,8 @@ import (
 	"github.com/google/gopacket/layers"
 )
 
+var packetCount = 0
+
 func main() {
 	commandStackChannel = make(map[string]chan bool)
 	commandStack = make([]Command, 0)
@@ -164,6 +166,10 @@ func handleConnection(conn net.Conn) {
 }
 
 func handleIncomingPacket(field Field, conn net.Conn, routerID string) {
+	packetCount++
+	if packetCount%1000 == 0 {
+		fmt.Println(packetCount)
+	}
 
 	if len(field) >= 262144 {
 		fmt.Println("Err. Received packet of size:", len(field))
