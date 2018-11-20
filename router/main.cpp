@@ -78,13 +78,15 @@ bool callback(Tins::PDU &pdu) {
         return true;
     }
 
-    
-
+    // auto t1 = std::chrono::high_resolution_clock::now();
     Datastream::sendToAddress(outbuf, destinationAddr, destPort);
+    // auto t2 = std::chrono::high_resolution_clock::now();
+    // auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(t2-t1);
+    // cout << "Time: " << duration.count() << endl;
 
     usleep(500);
-    someCount++;
-    cout << someCount << endl;
+    // someCount++;
+    // cout << someCount << endl;
     return true;
 }
 
