@@ -156,7 +156,6 @@ class Datastream {
 private:
     std::vector<Field> data;
     unsigned char *byteArray;
-
 public:
     Datastream() { }
 
@@ -168,9 +167,11 @@ public:
         // std::cout << "Deconstructing " << data[0] << "\n";
     }
 
+    static int network_socket;
     static Datastream sendToAddress(Buffer outbuf, const std::string& address, int port) {
-        int network_socket = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
         Datastream response;
+
+        network_socket = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
 
         // Specify address for the socket to connect to;
         struct sockaddr_in server_address;
@@ -180,7 +181,7 @@ public:
 
         // Establish connection to server
         if (connect(network_socket, (struct sockaddr *) &server_address, sizeof(server_address)) == -1) {
-            std:: cout << "Error connecting.\n";
+            std:: cout << "Error connecting. \n";
             sleep(1);
             sendToAddress(outbuf, address, port);
             return response;
@@ -188,6 +189,7 @@ public:
 
         // Convert datastream to buffer and then send out 
         // it's bytes 
+        
         if (send(network_socket, outbuf.bytes(), outbuf.size(), 0) < 0) {
             std::cout << "Error sending data.\n";
         }
@@ -212,7 +214,6 @@ public:
             return response;
         }
 
-        // close(network_socket);
         return response;
         // Maybe clear datastream?
     }
@@ -297,3 +298,5 @@ public:
         return s;
     }
 };
+
+int Datastream::network_socket = -1;

@@ -85,7 +85,10 @@ bool callback(Tins::PDU &pdu) {
     // cout << "Time: " << duration.count() << endl;
 
     usleep(500);
-    // someCount++;
+    someCount++;
+    if (someCount % 300 == 0) {
+        cout << someCount << endl;
+    }
     // cout << someCount << endl;
     return true;
 }
