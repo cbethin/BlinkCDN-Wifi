@@ -1,0 +1,820 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		05D98CC0556EAB35B1BA9C76 /* Pods_blinkCDN_Wifi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A803FF999CCD585FB1EDBF8B /* Pods_blinkCDN_Wifi.framework */; };
+		5FF9F4E7B0A4068DE2B353FB /* Pods_blinkCDN_WifiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9EB33F4F4264685449E9F4 /* Pods_blinkCDN_WifiTests.framework */; };
+		CC246F2AC7D8421562E71AA0 /* Pods_blinkCDN_WifiUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95D4AF9C3429B055CE629B7D /* Pods_blinkCDN_WifiUITests.framework */; };
+		F05DB086219F97AE008E00F4 /* DeviceInfoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F05DB085219F97AE008E00F4 /* DeviceInfoCollectionViewCell.xib */; };
+		F05DB08821A0ECF7008E00F4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05DB08721A0ECF7008E00F4 /* LoginViewController.swift */; };
+		F05DB08A21A0FB22008E00F4 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05DB08921A0FB22008E00F4 /* Storage.swift */; };
+		F067770D21961FB0009DAFE5 /* RouterStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F067770C21961FB0009DAFE5 /* RouterStatsViewController.swift */; };
+		F078DC0D21691AAD004B43A4 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = F078DC0C21691AAD004B43A4 /* Device.swift */; };
+		F0806C9B216317BE001CC75E /* TouchResponsiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0806C9A216317BE001CC75E /* TouchResponsiveView.swift */; };
+		F09AB934215B3438007BD52C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09AB933215B3438007BD52C /* AppDelegate.swift */; };
+		F09AB936215B3438007BD52C /* DeviceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09AB935215B3438007BD52C /* DeviceListViewController.swift */; };
+		F09AB939215B3438007BD52C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F09AB937215B3438007BD52C /* Main.storyboard */; };
+		F09AB93B215B343A007BD52C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F09AB93A215B343A007BD52C /* Assets.xcassets */; };
+		F09AB93E215B343A007BD52C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F09AB93C215B343A007BD52C /* LaunchScreen.storyboard */; };
+		F09AB949215B343A007BD52C /* blinkCDN_WifiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09AB948215B343A007BD52C /* blinkCDN_WifiTests.swift */; };
+		F09AB954215B343A007BD52C /* blinkCDN_WifiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09AB953215B343A007BD52C /* blinkCDN_WifiUITests.swift */; };
+		F09AB962215B38DC007BD52C /* ConnectedDeviceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09AB961215B38DC007BD52C /* ConnectedDeviceCollectionViewCell.swift */; };
+		F09AB964215B3BBE007BD52C /* WifiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09AB963215B3BBE007BD52C /* WifiController.swift */; };
+		F09AB966215C0146007BD52C /* ConnectedDeviceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09AB965215C0146007BD52C /* ConnectedDeviceDetailViewController.swift */; };
+		F0AE190721862DC700AA79ED /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F0AE190521862DAF00AA79ED /* OpenSans-Bold.ttf */; };
+		F0AE190821862DC900AA79ED /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F0AE190321862DAF00AA79ED /* OpenSans-ExtraBold.ttf */; };
+		F0AE190921862DCB00AA79ED /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F0AE190221862DAF00AA79ED /* OpenSans-Light.ttf */; };
+		F0AE190A21862DCD00AA79ED /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F0AE190421862DAF00AA79ED /* OpenSans-Regular.ttf */; };
+		F0AE190B21862DD000AA79ED /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F0AE190621862DAF00AA79ED /* OpenSans-SemiBold.ttf */; };
+		F0DB72A8219D331E00DF93AF /* DeviceInfoCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB72A7219D331E00DF93AF /* DeviceInfoCardView.swift */; };
+		F0F803122187CA0C00C2F543 /* BlinkResponseTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F803112187CA0C00C2F543 /* BlinkResponseTypes.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F09AB945215B343A007BD52C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F09AB928215B3438007BD52C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F09AB92F215B3438007BD52C;
+			remoteInfo = "blinkCDN Wifi";
+		};
+		F09AB950215B343A007BD52C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F09AB928215B3438007BD52C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F09AB92F215B3438007BD52C;
+			remoteInfo = "blinkCDN Wifi";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		11858E37960663C787D90D44 /* Pods-blinkCDN Wifi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-blinkCDN Wifi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-blinkCDN Wifi/Pods-blinkCDN Wifi.debug.xcconfig"; sourceTree = "<group>"; };
+		35DB1C9D6E47317F5F1193FB /* Pods-blinkCDN WifiTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-blinkCDN WifiTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-blinkCDN WifiTests/Pods-blinkCDN WifiTests.release.xcconfig"; sourceTree = "<group>"; };
+		7B0823D03D33E257FF844ACF /* Pods-blinkCDN WifiUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-blinkCDN WifiUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-blinkCDN WifiUITests/Pods-blinkCDN WifiUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		7D9EB33F4F4264685449E9F4 /* Pods_blinkCDN_WifiTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_blinkCDN_WifiTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95D4AF9C3429B055CE629B7D /* Pods_blinkCDN_WifiUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_blinkCDN_WifiUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A803FF999CCD585FB1EDBF8B /* Pods_blinkCDN_Wifi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_blinkCDN_Wifi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC98937CFC4BE472491B36E3 /* Pods-blinkCDN WifiUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-blinkCDN WifiUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-blinkCDN WifiUITests/Pods-blinkCDN WifiUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F05DB085219F97AE008E00F4 /* DeviceInfoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeviceInfoCollectionViewCell.xib; sourceTree = "<group>"; };
+		F05DB08721A0ECF7008E00F4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F05DB08921A0FB22008E00F4 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		F067770C21961FB0009DAFE5 /* RouterStatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterStatsViewController.swift; sourceTree = "<group>"; };
+		F078DC0C21691AAD004B43A4 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		F0806C9A216317BE001CC75E /* TouchResponsiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchResponsiveView.swift; sourceTree = "<group>"; };
+		F09AB930215B3438007BD52C /* blinkCDN Wifi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "blinkCDN Wifi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F09AB933215B3438007BD52C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F09AB935215B3438007BD52C /* DeviceListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceListViewController.swift; sourceTree = "<group>"; };
+		F09AB938215B3438007BD52C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F09AB93A215B343A007BD52C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F09AB93D215B343A007BD52C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F09AB93F215B343A007BD52C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F09AB944215B343A007BD52C /* blinkCDN WifiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "blinkCDN WifiTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F09AB948215B343A007BD52C /* blinkCDN_WifiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = blinkCDN_WifiTests.swift; sourceTree = "<group>"; };
+		F09AB94A215B343A007BD52C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F09AB94F215B343A007BD52C /* blinkCDN WifiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "blinkCDN WifiUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F09AB953215B343A007BD52C /* blinkCDN_WifiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = blinkCDN_WifiUITests.swift; sourceTree = "<group>"; };
+		F09AB955215B343A007BD52C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F09AB961215B38DC007BD52C /* ConnectedDeviceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectedDeviceCollectionViewCell.swift; sourceTree = "<group>"; };
+		F09AB963215B3BBE007BD52C /* WifiController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiController.swift; sourceTree = "<group>"; };
+		F09AB965215C0146007BD52C /* ConnectedDeviceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectedDeviceDetailViewController.swift; sourceTree = "<group>"; };
+		F09FB0807842A97BABC7B6A6 /* Pods-blinkCDN Wifi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-blinkCDN Wifi.release.xcconfig"; path = "Pods/Target Support Files/Pods-blinkCDN Wifi/Pods-blinkCDN Wifi.release.xcconfig"; sourceTree = "<group>"; };
+		F0AE190221862DAF00AA79ED /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		F0AE190321862DAF00AA79ED /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		F0AE190421862DAF00AA79ED /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		F0AE190521862DAF00AA79ED /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		F0AE190621862DAF00AA79ED /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		F0DB72A7219D331E00DF93AF /* DeviceInfoCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfoCardView.swift; sourceTree = "<group>"; };
+		F0F803112187CA0C00C2F543 /* BlinkResponseTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlinkResponseTypes.swift; sourceTree = "<group>"; };
+		F95EA432FBDE13EBB1CD3665 /* Pods-blinkCDN WifiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-blinkCDN WifiTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-blinkCDN WifiTests/Pods-blinkCDN WifiTests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F09AB92D215B3438007BD52C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05D98CC0556EAB35B1BA9C76 /* Pods_blinkCDN_Wifi.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F09AB941215B343A007BD52C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FF9F4E7B0A4068DE2B353FB /* Pods_blinkCDN_WifiTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F09AB94C215B343A007BD52C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC246F2AC7D8421562E71AA0 /* Pods_blinkCDN_WifiUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		49A86ABDE959D1E95B702B0E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				11858E37960663C787D90D44 /* Pods-blinkCDN Wifi.debug.xcconfig */,
+				F09FB0807842A97BABC7B6A6 /* Pods-blinkCDN Wifi.release.xcconfig */,
+				F95EA432FBDE13EBB1CD3665 /* Pods-blinkCDN WifiTests.debug.xcconfig */,
+				35DB1C9D6E47317F5F1193FB /* Pods-blinkCDN WifiTests.release.xcconfig */,
+				7B0823D03D33E257FF844ACF /* Pods-blinkCDN WifiUITests.debug.xcconfig */,
+				CC98937CFC4BE472491B36E3 /* Pods-blinkCDN WifiUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B0BB8D6E4FD4AFBF71007387 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A803FF999CCD585FB1EDBF8B /* Pods_blinkCDN_Wifi.framework */,
+				7D9EB33F4F4264685449E9F4 /* Pods_blinkCDN_WifiTests.framework */,
+				95D4AF9C3429B055CE629B7D /* Pods_blinkCDN_WifiUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F09AB927215B3438007BD52C = {
+			isa = PBXGroup;
+			children = (
+				F09AB932215B3438007BD52C /* blinkCDN Wifi */,
+				F09AB947215B343A007BD52C /* blinkCDN WifiTests */,
+				F09AB952215B343A007BD52C /* blinkCDN WifiUITests */,
+				F09AB931215B3438007BD52C /* Products */,
+				49A86ABDE959D1E95B702B0E /* Pods */,
+				B0BB8D6E4FD4AFBF71007387 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F09AB931215B3438007BD52C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F09AB930215B3438007BD52C /* blinkCDN Wifi.app */,
+				F09AB944215B343A007BD52C /* blinkCDN WifiTests.xctest */,
+				F09AB94F215B343A007BD52C /* blinkCDN WifiUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F09AB932215B3438007BD52C /* blinkCDN Wifi */ = {
+			isa = PBXGroup;
+			children = (
+				F09AB933215B3438007BD52C /* AppDelegate.swift */,
+				F09AB937215B3438007BD52C /* Main.storyboard */,
+				F09AB935215B3438007BD52C /* DeviceListViewController.swift */,
+				F067770C21961FB0009DAFE5 /* RouterStatsViewController.swift */,
+				F05DB08721A0ECF7008E00F4 /* LoginViewController.swift */,
+				F09AB93A215B343A007BD52C /* Assets.xcassets */,
+				F09AB93C215B343A007BD52C /* LaunchScreen.storyboard */,
+				F09AB93F215B343A007BD52C /* Info.plist */,
+				F0F803102187C9F900C2F543 /* Router Files */,
+				F0DB72A7219D331E00DF93AF /* DeviceInfoCardView.swift */,
+				F09AB965215C0146007BD52C /* ConnectedDeviceDetailViewController.swift */,
+				F0806C9A216317BE001CC75E /* TouchResponsiveView.swift */,
+				F05DB085219F97AE008E00F4 /* DeviceInfoCollectionViewCell.xib */,
+				F0AE190121862D9C00AA79ED /* Fonts */,
+				F0DB72A6219D330500DF93AF /* Old */,
+				F05DB08921A0FB22008E00F4 /* Storage.swift */,
+			);
+			path = "blinkCDN Wifi";
+			sourceTree = "<group>";
+		};
+		F09AB947215B343A007BD52C /* blinkCDN WifiTests */ = {
+			isa = PBXGroup;
+			children = (
+				F09AB948215B343A007BD52C /* blinkCDN_WifiTests.swift */,
+				F09AB94A215B343A007BD52C /* Info.plist */,
+			);
+			path = "blinkCDN WifiTests";
+			sourceTree = "<group>";
+		};
+		F09AB952215B343A007BD52C /* blinkCDN WifiUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F09AB953215B343A007BD52C /* blinkCDN_WifiUITests.swift */,
+				F09AB955215B343A007BD52C /* Info.plist */,
+			);
+			path = "blinkCDN WifiUITests";
+			sourceTree = "<group>";
+		};
+		F0AE190121862D9C00AA79ED /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F0AE190521862DAF00AA79ED /* OpenSans-Bold.ttf */,
+				F0AE190321862DAF00AA79ED /* OpenSans-ExtraBold.ttf */,
+				F0AE190221862DAF00AA79ED /* OpenSans-Light.ttf */,
+				F0AE190421862DAF00AA79ED /* OpenSans-Regular.ttf */,
+				F0AE190621862DAF00AA79ED /* OpenSans-SemiBold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		F0DB72A6219D330500DF93AF /* Old */ = {
+			isa = PBXGroup;
+			children = (
+				F09AB961215B38DC007BD52C /* ConnectedDeviceCollectionViewCell.swift */,
+			);
+			path = Old;
+			sourceTree = "<group>";
+		};
+		F0F803102187C9F900C2F543 /* Router Files */ = {
+			isa = PBXGroup;
+			children = (
+				F09AB963215B3BBE007BD52C /* WifiController.swift */,
+				F0F803112187CA0C00C2F543 /* BlinkResponseTypes.swift */,
+				F078DC0C21691AAD004B43A4 /* Device.swift */,
+			);
+			path = "Router Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F09AB92F215B3438007BD52C /* blinkCDN Wifi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F09AB958215B343A007BD52C /* Build configuration list for PBXNativeTarget "blinkCDN Wifi" */;
+			buildPhases = (
+				5BB692745E13B9C49A114B07 /* [CP] Check Pods Manifest.lock */,
+				F09AB92C215B3438007BD52C /* Sources */,
+				F09AB92D215B3438007BD52C /* Frameworks */,
+				F09AB92E215B3438007BD52C /* Resources */,
+				C16DB5CA6BF174C68EBB4625 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "blinkCDN Wifi";
+			productName = "blinkCDN Wifi";
+			productReference = F09AB930215B3438007BD52C /* blinkCDN Wifi.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F09AB943215B343A007BD52C /* blinkCDN WifiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F09AB95B215B343A007BD52C /* Build configuration list for PBXNativeTarget "blinkCDN WifiTests" */;
+			buildPhases = (
+				E6CD935B3BAA04EFE0C02DCB /* [CP] Check Pods Manifest.lock */,
+				F09AB940215B343A007BD52C /* Sources */,
+				F09AB941215B343A007BD52C /* Frameworks */,
+				F09AB942215B343A007BD52C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F09AB946215B343A007BD52C /* PBXTargetDependency */,
+			);
+			name = "blinkCDN WifiTests";
+			productName = "blinkCDN WifiTests";
+			productReference = F09AB944215B343A007BD52C /* blinkCDN WifiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F09AB94E215B343A007BD52C /* blinkCDN WifiUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F09AB95E215B343A007BD52C /* Build configuration list for PBXNativeTarget "blinkCDN WifiUITests" */;
+			buildPhases = (
+				4CEE3D16832217697F65A588 /* [CP] Check Pods Manifest.lock */,
+				F09AB94B215B343A007BD52C /* Sources */,
+				F09AB94C215B343A007BD52C /* Frameworks */,
+				F09AB94D215B343A007BD52C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F09AB951215B343A007BD52C /* PBXTargetDependency */,
+			);
+			name = "blinkCDN WifiUITests";
+			productName = "blinkCDN WifiUITests";
+			productReference = F09AB94F215B343A007BD52C /* blinkCDN WifiUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F09AB928215B3438007BD52C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1000;
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = "Charles Bethin";
+				TargetAttributes = {
+					F09AB92F215B3438007BD52C = {
+						CreatedOnToolsVersion = 10.0;
+					};
+					F09AB943215B343A007BD52C = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = F09AB92F215B3438007BD52C;
+					};
+					F09AB94E215B343A007BD52C = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = F09AB92F215B3438007BD52C;
+					};
+				};
+			};
+			buildConfigurationList = F09AB92B215B3438007BD52C /* Build configuration list for PBXProject "blinkCDN Wifi" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F09AB927215B3438007BD52C;
+			productRefGroup = F09AB931215B3438007BD52C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F09AB92F215B3438007BD52C /* blinkCDN Wifi */,
+				F09AB943215B343A007BD52C /* blinkCDN WifiTests */,
+				F09AB94E215B343A007BD52C /* blinkCDN WifiUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F09AB92E215B3438007BD52C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0AE190921862DCB00AA79ED /* OpenSans-Light.ttf in Resources */,
+				F09AB93E215B343A007BD52C /* LaunchScreen.storyboard in Resources */,
+				F09AB93B215B343A007BD52C /* Assets.xcassets in Resources */,
+				F05DB086219F97AE008E00F4 /* DeviceInfoCollectionViewCell.xib in Resources */,
+				F0AE190A21862DCD00AA79ED /* OpenSans-Regular.ttf in Resources */,
+				F0AE190B21862DD000AA79ED /* OpenSans-SemiBold.ttf in Resources */,
+				F0AE190721862DC700AA79ED /* OpenSans-Bold.ttf in Resources */,
+				F09AB939215B3438007BD52C /* Main.storyboard in Resources */,
+				F0AE190821862DC900AA79ED /* OpenSans-ExtraBold.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F09AB942215B343A007BD52C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F09AB94D215B343A007BD52C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4CEE3D16832217697F65A588 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-blinkCDN WifiUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5BB692745E13B9C49A114B07 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-blinkCDN Wifi-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C16DB5CA6BF174C68EBB4625 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-blinkCDN Wifi/Pods-blinkCDN Wifi-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-blinkCDN Wifi/Pods-blinkCDN Wifi-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E6CD935B3BAA04EFE0C02DCB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-blinkCDN WifiTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F09AB92C215B3438007BD52C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0F803122187CA0C00C2F543 /* BlinkResponseTypes.swift in Sources */,
+				F09AB966215C0146007BD52C /* ConnectedDeviceDetailViewController.swift in Sources */,
+				F0DB72A8219D331E00DF93AF /* DeviceInfoCardView.swift in Sources */,
+				F09AB936215B3438007BD52C /* DeviceListViewController.swift in Sources */,
+				F078DC0D21691AAD004B43A4 /* Device.swift in Sources */,
+				F05DB08A21A0FB22008E00F4 /* Storage.swift in Sources */,
+				F09AB962215B38DC007BD52C /* ConnectedDeviceCollectionViewCell.swift in Sources */,
+				F09AB964215B3BBE007BD52C /* WifiController.swift in Sources */,
+				F067770D21961FB0009DAFE5 /* RouterStatsViewController.swift in Sources */,
+				F0806C9B216317BE001CC75E /* TouchResponsiveView.swift in Sources */,
+				F09AB934215B3438007BD52C /* AppDelegate.swift in Sources */,
+				F05DB08821A0ECF7008E00F4 /* LoginViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F09AB940215B343A007BD52C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F09AB949215B343A007BD52C /* blinkCDN_WifiTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F09AB94B215B343A007BD52C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F09AB954215B343A007BD52C /* blinkCDN_WifiUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F09AB946215B343A007BD52C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F09AB92F215B3438007BD52C /* blinkCDN Wifi */;
+			targetProxy = F09AB945215B343A007BD52C /* PBXContainerItemProxy */;
+		};
+		F09AB951215B343A007BD52C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F09AB92F215B3438007BD52C /* blinkCDN Wifi */;
+			targetProxy = F09AB950215B343A007BD52C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F09AB937215B3438007BD52C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F09AB938215B3438007BD52C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F09AB93C215B343A007BD52C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F09AB93D215B343A007BD52C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F09AB956215B343A007BD52C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F09AB957215B343A007BD52C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F09AB959215B343A007BD52C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 11858E37960663C787D90D44 /* Pods-blinkCDN Wifi.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4D5F779W2G;
+				INFOPLIST_FILE = "blinkCDN Wifi/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.blinkcdn.blinkCDN-Wifi";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F09AB95A215B343A007BD52C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F09FB0807842A97BABC7B6A6 /* Pods-blinkCDN Wifi.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4D5F779W2G;
+				INFOPLIST_FILE = "blinkCDN Wifi/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.blinkcdn.blinkCDN-Wifi";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F09AB95C215B343A007BD52C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F95EA432FBDE13EBB1CD3665 /* Pods-blinkCDN WifiTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4D5F779W2G;
+				INFOPLIST_FILE = "blinkCDN WifiTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.blinkcdn.blinkCDN-WifiTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/blinkCDN Wifi.app/blinkCDN Wifi";
+			};
+			name = Debug;
+		};
+		F09AB95D215B343A007BD52C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35DB1C9D6E47317F5F1193FB /* Pods-blinkCDN WifiTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4D5F779W2G;
+				INFOPLIST_FILE = "blinkCDN WifiTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.blinkcdn.blinkCDN-WifiTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/blinkCDN Wifi.app/blinkCDN Wifi";
+			};
+			name = Release;
+		};
+		F09AB95F215B343A007BD52C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B0823D03D33E257FF844ACF /* Pods-blinkCDN WifiUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4D5F779W2G;
+				INFOPLIST_FILE = "blinkCDN WifiUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.blinkcdn.blinkCDN-WifiUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "blinkCDN Wifi";
+			};
+			name = Debug;
+		};
+		F09AB960215B343A007BD52C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC98937CFC4BE472491B36E3 /* Pods-blinkCDN WifiUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4D5F779W2G;
+				INFOPLIST_FILE = "blinkCDN WifiUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.blinkcdn.blinkCDN-WifiUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "blinkCDN Wifi";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F09AB92B215B3438007BD52C /* Build configuration list for PBXProject "blinkCDN Wifi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F09AB956215B343A007BD52C /* Debug */,
+				F09AB957215B343A007BD52C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F09AB958215B343A007BD52C /* Build configuration list for PBXNativeTarget "blinkCDN Wifi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F09AB959215B343A007BD52C /* Debug */,
+				F09AB95A215B343A007BD52C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F09AB95B215B343A007BD52C /* Build configuration list for PBXNativeTarget "blinkCDN WifiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F09AB95C215B343A007BD52C /* Debug */,
+				F09AB95D215B343A007BD52C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F09AB95E215B343A007BD52C /* Build configuration list for PBXNativeTarget "blinkCDN WifiUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F09AB95F215B343A007BD52C /* Debug */,
+				F09AB960215B343A007BD52C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F09AB928215B3438007BD52C /* Project object */;
+}

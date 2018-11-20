@@ -1,0 +1,6 @@
+framework module Pods_blinkCDN_WifiUITests {
+  umbrella header "Pods-blinkCDN WifiUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
