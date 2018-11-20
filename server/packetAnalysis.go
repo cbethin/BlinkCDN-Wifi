@@ -40,18 +40,18 @@ func getBandwidthArray(id string) map[string]int {
 	}
 
 	// For all packets, loop through and add in the ones from 192.168
-	for addr, pktList := range routers[id].ReceivedPackets {
-		if strings.Contains(addr, "192.168") {
-			bytesReceived := 0
-			for _, pkt := range pktList {
-				if time.Since(pkt.timestamp) <= 5*time.Second {
-					bytesReceived += getBandwidthFromPacket(pkt.data)
-				}
-			}
+	// for addr, pktList := range routers[id].ReceivedPackets {
+	// 	if strings.Contains(addr, "192.168") {
+	// 		bytesReceived := 0
+	// 		for _, pkt := range pktList {
+	// 			if time.Since(pkt.timestamp) <= 5*time.Second {
+	// 				bytesReceived += getBandwidthFromPacket(pkt.data)
+	// 			}
+	// 		}
 
-			ipBandwidths[addr] = bytesReceived
-		}
-	}
+	// 		ipBandwidths[addr] = bytesReceived
+	// 	}
+	// }
 
 	routersMutex[id].Unlock()
 
