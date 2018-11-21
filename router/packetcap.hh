@@ -1,5 +1,8 @@
 #pragma once
 #include <string>
+#include <map>
+#include <vector> 
+
 #include "tins/tins.h"
 #include "datastream.hh"
 #include "router.hh"
@@ -57,7 +60,7 @@ private:
             headerSize += 14 + ip.header_size() + tcp.header_size(); // 14 = ethernet header size
 
             // Skip if the packet is being sent to our processing server
-            if (ip.dst_addr().to_string() == destinationAddr && ip.src_addr().to_string() == "192.168.8.1") {
+            if (ip.dst_addr().to_string() == destinationAddr) {
                 return true;
             }
         } catch (Tins::pdu_not_found err) {
