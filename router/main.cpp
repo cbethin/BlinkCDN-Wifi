@@ -22,7 +22,7 @@ int main(int argc, const char *argv[]) {
     destinationAddr = (argc>1) ? argv[1] : "127.0.0.1";
     destPort = 9000;
 
-    PacketCap packetCap("en0", &r, destinationAddr, destPort);
+    PacketCap packetCap("br-lan", &r, destinationAddr, destPort);
     // Tins::Sniffer sniffer("en0");
 
     int packetCount = 0;

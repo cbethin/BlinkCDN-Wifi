@@ -87,15 +87,6 @@ public:
         }
     }
 
-    static uint8_t* intToByteArray(int n) {
-        uint8_t *bytes = new uint8_t[intByteArraySize];
-        for (int i = 0; i < intByteArraySize; i++) {
-            bytes[i] = (uint8_t)((uint32_t(n) >> (8 * (intByteArraySize-1-i))) & 0xff);
-        }
-
-        return bytes;
-    }
-
     static void deseralizeFields(unsigned char* c, std::function<void(Field)> fieldsHandler) {
         int totalSize = byteArrayToInt(c);
 
@@ -141,11 +132,9 @@ public:
     }
 
     void append(const Buffer& b) {
-        const clock_t begin_time = clock();
         for (auto i = b.buf.begin(); i != b.buf.end(); i++) {
             buf.push_back(*i);
         }
-        std::cout << (float(clock() - begin_time) / CLOCKS_PER_SEC) * 1000 << std::endl;
     }
 
     void append(char c) {
@@ -179,9 +168,9 @@ public:
     }
 
     static int network_socket;
-    static Datastream sendToAddress(uint8_t *bytes, int bytesSize, const std::string& address, int port) {
-        
+    static Datastream sendToAddress(Buffer outbuf, const std::string& address, int port) {
         Datastream response;
+
         network_socket = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
 
         // Specify address for the socket to connect to;
@@ -190,17 +179,19 @@ public:
         server_address.sin_port = htons(port);
         server_address.sin_addr.s_addr = inet_addr(address.c_str());
 
-       
         // Establish connection to server
         if (connect(network_socket, (struct sockaddr *) &server_address, sizeof(server_address)) == -1) {
             std:: cout << "Error connecting. \n";
             sleep(1);
-            sendToAddress(bytes, bytesSize, address, port);
+            sendToAddress(outbuf, address, port);
             return response;
         }
 
-        if (send(network_socket, bytes, bytesSize, 0) < 0) {
-            std::cout << "Error sending data. " << std::strerror(errno) << std::endl;
+        // Convert datastream to buffer and then send out 
+        // it's bytes 
+        
+        if (send(network_socket, outbuf.bytes(), outbuf.size(), 0) < 0) {
+            std::cout << "Error sending data.\n";
         }
 
         // receive
