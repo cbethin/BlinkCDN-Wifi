@@ -15,41 +15,68 @@ private:
     int destPort;
     int packetCount;
 
-    Buffer pduToBuffer(Tins::PDU &pdu, int n) {
-            Buffer packetBuffer;
-            uint8_t *buf = new uint8_t[2000];
+    // map<std::string, std::vector<Tins::PDU>> packetList;
+    int addFieldToByteArray(const Field& field, uint8_t* const bytes, int startIndex) {
+        int intByteArraySize = 4;
+        int j = startIndex;
 
-            Tins::PDU::serialization_type buffer;
+        // Add int array to bytes 
+        for (int i = 0; i < intByteArraySize; i++, j++) {
+            bytes[j] = (uint8_t)((uint32_t(field.length()) >> (8 * (intByteArraySize-1-i))) & 0xff);
+        }
+
+        // add field to bytes 
+        for (int i = 0; i < field.length(); i++, j++) {
+            bytes[j] = field[i];
+        }
+
+        return j;
+    }
+
+
+    int pduToByteArray(Tins::PDU &pdu, uint8_t *bytes) {
+
+            Tins::PDU::serialization_type packetBuffer;
             try {
-                buffer = pdu.serialize();
+                packetBuffer = pdu.serialize();
             } catch (Tins::serialization_error err) {
                 std::cout << "Error serializing packet.\n";
-                return Buffer();
+                return -1;
             }
 
-            int packetSize = 0;
-            for (auto i = buffer.begin(); i != buffer.end() /*&& packetSize <= n+1*/; i++) {
-                packetBuffer.append((unsigned char) *i);
-                packetSize++;
+            int packetSize = packetBuffer.size(); // packetsize
+
+            // Manually add packet 
+            int totalBytesSize = 4 + std::string("id").length() + 4 + router->getId().length() + 4 + std::string("packet").length() + packetSize + 1;
+            bytes = new uint8_t[totalBytesSize+4];
+
+            // Add total byte size array to bytes 
+            for (int i = 0; i < 4; i++) {
+                bytes[i] = (uint8_t)((uint32_t(totalBytesSize) >> (8 * (3-i))) & 0xff);
             }
 
-            // Add a null char cuz we're expecting null terminated strings? (well we used to i think)
-            packetBuffer.append((unsigned char) '\00');
-            packetSize++;
+            // Add fields to bytes
+            int nextUnusedIndex = addFieldToByteArray("id", bytes, 4);
+            nextUnusedIndex = addFieldToByteArray(router->getId(), bytes, nextUnusedIndex);
+            nextUnusedIndex = addFieldToByteArray("packet", bytes, nextUnusedIndex);
+            
+            // Add packet to bytes
+            for (int i = 0; i < packetSize; i++, nextUnusedIndex++) {
+                bytes[nextUnusedIndex] = packetBuffer[i];
+            }
+            bytes[nextUnusedIndex] = '\00';
 
-            Buffer outbuf;
-            outbuf.append(Buffer(Field("id")));
-            outbuf.append(Buffer(Field(router->getId())));
+            std::cout << "PACKET: ";
+            for (int i = 0; i < totalBytesSize; i++) {
+                std::cout << std::hex << (char)bytes[i] << "-";
+            }
+            std::cout << "\n";
 
-            outbuf.append(Buffer(Field("packet")));
-            outbuf.append(Buffer(packetSize));
-            outbuf.append(packetBuffer);
-
-            delete[] buf;
-            return outbuf;
+            return totalBytesSize+4+1;
     }
 
     bool callback(Tins::PDU &pdu) {
+        std::string pktDestination;
 
         int headerSize = 0;
         try {
@@ -60,6 +87,7 @@ private:
             headerSize += 14 + ip.header_size() + tcp.header_size(); // 14 = ethernet header size
 
             // Skip if the packet is being sent to our processing server
+            pktDestination = ip.dst_addr().to_string();
             if (ip.dst_addr().to_string() == destinationAddr) {
                 return true;
             }
@@ -71,12 +99,12 @@ private:
             headerSize = 15000;
         }
 
-        Buffer outbuf = pduToBuffer(pdu, headerSize);
-        if (outbuf.size() <= 0) {
-            return true;
-        }
+        // Buffer outbuf = pduToBuffer(pdu, headerSize);
+        uint8_t *bytes; 
+        int size = pduToByteArray(pdu, bytes);
 
-        Datastream::sendToAddress(outbuf, destinationAddr, destPort);
+        Datastream::sendToAddress(bytes, size, destinationAddr, destPort);
+        delete[] bytes;
 
         usleep(500);
         // cout << someCount << endl;
