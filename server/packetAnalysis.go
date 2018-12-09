@@ -31,13 +31,13 @@ func getBandwidthArray(id string) map[string]int {
 		if pktList, ok := routers[id].ReceivedPackets[dev.ip]; ok {
 			fmt.Println(dev.ip, "--", len(pktList))
 			for _, pkt := range pktList {
-				if time.Since(pkt.timestamp) <= 5*time.Second {
+				if time.Since(pkt.timestamp) <= time.Duration(OLD_PACKET_TIMEOUT_TIME*int(time.Second)) {
 					bytesReceived += getBandwidthFromPacket(pkt.data)
 				}
 			}
 		}
 
-		ipBandwidths[dev.ip] = bytesReceived / 5
+		ipBandwidths[dev.ip] = bytesReceived / OLD_PACKET_TIMEOUT_TIME
 	}
 
 	// For all packets, loop through and add in the ones from 192.168

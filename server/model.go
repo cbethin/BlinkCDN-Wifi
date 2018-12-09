@@ -48,6 +48,8 @@ var pcapWriteMutex = &sync.Mutex{}
 
 var ouiLookup map[string]string
 
+var OLD_PACKET_TIMEOUT_TIME int = 5
+
 // MakeNewRouter : Initializes a router data object
 func MakeNewRouter() RouterData {
 	data := RouterData{}
@@ -109,7 +111,7 @@ func removeOldPacketsFromPacketList(ipAddr string, routerID string) {
 		// For every packet in the list, only keep it in the updated list
 		// if it is less than 5 seconds old
 		for i := range pktList {
-			if time.Since(pktList[i].timestamp) <= 5*time.Second {
+			if time.Since(pktList[i].timestamp) <= time.Duration(OLD_PACKET_TIMEOUT_TIME*int(time.Second)) {
 				updatedPacketList = append(updatedPacketList, pktList[i])
 			}
 		}
