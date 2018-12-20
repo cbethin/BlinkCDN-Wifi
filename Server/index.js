@@ -20,7 +20,7 @@ var updates = {
     "LastUpdatedAt": null
 }
 
-var commandsToIssue = ["1", "2", "3", "4444"]
+var commandsToIssue = []
 
 // ROUTER HANDLING FUNCTIONS
 app.post('/router_update', (req, res) => {
