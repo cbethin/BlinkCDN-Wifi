@@ -20,9 +20,9 @@ var updates = {
     "LastUpdatedAt": null
 }
 
-var commands = { }
+var commandsToIssue = ["1", "2", "3", "4444"]
 
-// POST UPDATES
+// ROUTER HANDLING FUNCTIONS
 app.post('/router_update', (req, res) => {
     console.log("Req:", req.body);
     if (req.body.hasOwnProperty("bandwidth")) {
@@ -58,11 +58,17 @@ app.post('/router_update', (req, res) => {
 var count = 0
 app.post('/router_request', (req, res) => {
     console.log("REQ:", req.body);
-    res.send(blink.CreateResponse("Success", "ah"+count.toString()))
+
+    commandsObject = {}
+    while(commandsToIssue.length > 0) {
+        commandsObject["Command"+Object.keys(commandsObject).length.toString()] = commandsToIssue.shift();
+    }
+
+    res.send(blink.CreateResponse("Success", commandsObject))
     count += 1
 })
 
-// GET FUNCTIONS
+// APP HANDLING FUNCTIONS
 app.get('/publicapi/bandwidths', (req, res) => {
     var queries = req.query
     if (queries.hasOwnProperty('addr') && updates.Updates.hasOwnProperty("bandwidth") && updates.Updates.bandwidth.hasOwnProperty(queries['addr'])) {
@@ -98,6 +104,17 @@ app.get('/publicapi/publiccondev', (_, res) => {
 
 app.get('/publicapi/lastrouterupdatetime', (_, res) => {
     res.send(res.send(blink.CreateResponse("Success", updates.LastUpdatedAt)))
+})
+
+app.post('/publicapi/postcommand', (req, res) => {
+    var queries = req.query;
+    if (queries.hasOwnProperty("command")) {
+        console.log(queries["command"])
+        commandsToIssue.push(queries["command"])
+        res.send(blink.CreateResponse("Success", null))
+    }
+
+    res.send(blink.CreateResponse("Fail", "No command found."))
 })
 
 

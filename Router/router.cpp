@@ -37,7 +37,7 @@ int main(int argc, char*argv[]) {
             JSON j;
             j["Data"] = "request";
             requestClient.sendData("");
-            r.handleRequest(requestClient.getResponse());
+            r.handleResponseToRequest(requestClient.getResponse());
         }
 
         thisTime = std::chrono::system_clock::now();
