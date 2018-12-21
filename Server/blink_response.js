@@ -7,10 +7,28 @@ CreateResponse = (status, data) => {
     return response
 };
 
+var Devices = {}
+
 var Commands = {}
 var lowprioAddrs = []
 var medprioAddrs = []
 var highprioAddrs = []
+
+getPriorityForAddr = (addr) => {
+    if (lowprioAddrs.includes(addr)) {
+        return "low"
+    }
+
+    if (medprioAddrs.includes(addr)) {
+        return "med"
+    }
+
+    if (highprioAddrs.includes(addr)) {
+        return "high"
+    }
+
+    return "none"
+}
 
 generateSetPrioCommandString = () => {
     var output = "./scripts/resetprio.sh "
@@ -73,4 +91,4 @@ Commands.ResetPrio = () => {
 }
 
 
-module.exports = {CreateResponse, Commands}
+module.exports = {CreateResponse, Commands, getPriorityForAddr}

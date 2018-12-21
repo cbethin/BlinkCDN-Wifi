@@ -96,6 +96,10 @@ app.get('/publicapi/bandwidths', (req, res) => {
 
 app.get('/publicapi/publiccondev', (_, res) => {
     if (updates.Updates.hasOwnProperty("devices")) {
+        for (i in updates.Updates.devices) {
+            updates.Updates.devices[i].priority = blink.getPriorityForAddr(updates.Updates.devices[i].ip)
+        }
+
         res.send(blink.CreateResponse("Success", updates.Updates.devices))
     } else {
         res.send(blink.CreateResponse("Fail", null))
