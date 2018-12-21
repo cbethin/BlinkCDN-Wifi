@@ -125,6 +125,10 @@ app.post('/publicapi/postcommand', (req, res) => {
         res.send(blink.CreateResponse("Success", null))
         console.log(commandsToIssue)
         return
+    } else if (queries["type"] == "resetprio") {
+        commandsToIssue.push(blink.Commands.ResetPrio())
+        res.send(blink.CreateResponse("Success", null))
+        return
     }
 
     

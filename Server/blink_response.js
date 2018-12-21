@@ -16,21 +16,21 @@ generateSetPrioCommandString = () => {
     var output = "./scripts/resetprio.sh "
 
     if (lowprioAddrs.length > 0) {
-        output += "&& ./scripts/lowprio.sh 3mbit "
+        output += "&& /root/scripts/lowprio.sh 3mbit "
         for (i in lowprioAddrs) {
             output +=  lowprioAddrs[i] + " "
         }
     }
 
     if (medprioAddrs.length > 0) {
-        output += "&& ./scripts/medprio.sh 7mbit "
+        output += "&& /root/scripts/medprio.sh 7mbit "
         for (i in medprioAddrs) {
             output +=  medprioAddrs[i] + " "
         }
     }
 
     if (highprioAddrs.length > 0) {
-        output += "&& ./scripts/highprio.sh 10mbit "
+        output += "&& /root/scripts/highprio.sh 10mbit "
         for (i in highprioAddrs) {
             output +=  highprioAddrs[i] + " "
         }
@@ -66,6 +66,10 @@ Commands.SetHighPriority = (addr) => {
 
     highprioAddrs.push(addr)
     return generateSetPrioCommandString()
+}
+
+Commands.ResetPrio = () => {
+    return "/root/scripts/resetprio.sh"
 }
 
 

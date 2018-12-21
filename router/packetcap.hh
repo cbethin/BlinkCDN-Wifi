@@ -31,7 +31,7 @@ private:
 
     void trackBandwidthForPacket(const Tins::IP *ip) {
         std::string addr = ip->dst_addr().to_string();
-        if (addr.find("192.168.") == std::string::npos || addr.find(".255") != std::string::npos) {
+        if (addr.find("192.168.") == std::string::npos || addr.find(".255") != std::string::npos || addr.find("192.168.8.1") != std::string::npos) {
             return;
         }
 
@@ -42,6 +42,7 @@ private:
         std::string nearestSecondString = std::to_string(nearestSecond);
 
         // If this addr is not in the bandwidthJson, insert it
+
         bwidthMutex.lock();
         if (bandwidthJson[addr] == nullptr) {
             bandwidthJson[addr] = JSON();
@@ -67,7 +68,7 @@ private:
             const Tins::IP &ip = pdu.rfind_pdu<Tins::IP>();
             const Tins::TCP &tcp = pdu.rfind_pdu<Tins::TCP>();
             trackBandwidthForPacket(&ip);
-            trackTCPWindowSizeForPacket(&tcp);
+            // trackTCPWindowSizeForPacket(&tcp);
 
         } catch (Tins::pdu_not_found err) {
             // Catch PDU_not_found error if there's no IP
@@ -85,10 +86,7 @@ public:
     }
 
     void processPackets() {
-        while(true) {
-            Tins::PDU *pdu = sniffer.next_packet();
-            callback(*pdu);
-        }
+        sniffer.sniff_loop(Tins::make_sniffer_handler(this, &PacketCap::callback));
     }
 
     void processPacketsAsThread() {
@@ -103,7 +101,7 @@ public:
 
     JSON pullAndClearBandwidthJson() {
         JSON bwidths = bandwidthJson;
-        bandwidthJson = JSON();
+        bandwidthJson.clear();
         return bwidths;
     }
 
