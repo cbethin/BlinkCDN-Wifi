@@ -31,7 +31,7 @@ private:
 
     void trackBandwidthForPacket(const Tins::IP *ip) {
         std::string addr = ip->dst_addr().to_string();
-        if (addr.find("192.168.") == std::string::npos || addr.find(".255") != std::string::npos || addr.find("192.168.8.1") != std::string::npos) {
+        if (addr.find("192.168.") == std::string::npos || addr.find(".255") != std::string::npos || addr == "192.168.8.1") {
             return;
         }
 
@@ -101,7 +101,7 @@ public:
 
     JSON pullAndClearBandwidthJson() {
         JSON bwidths = bandwidthJson;
-        bandwidthJson.clear();
+        bandwidthJson = JSON();
         return bwidths;
     }
 

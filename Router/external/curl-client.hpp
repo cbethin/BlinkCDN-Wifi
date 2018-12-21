@@ -37,7 +37,7 @@ public:
             
             res = curl_easy_perform(curl);
             if (res != CURLE_OK) {
-                std::cout << "Error: " << curl_easy_strerror(res) << std::endl;
+                std::cout << "Error sending to server: " << curl_easy_strerror(res) << std::endl;
             }
 
             curl_easy_cleanup(curl);
