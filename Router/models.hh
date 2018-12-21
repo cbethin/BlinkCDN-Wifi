@@ -77,6 +77,7 @@ private:
     }
 
     void ExecuteCommand(const std::string& cmd) {
+        std::cout << "Executing command \"" << cmd << "\"\n";
         system(cmd.c_str());
     }
 

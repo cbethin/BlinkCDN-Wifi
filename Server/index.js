@@ -108,11 +108,26 @@ app.get('/publicapi/lastrouterupdatetime', (_, res) => {
 
 app.post('/publicapi/postcommand', (req, res) => {
     var queries = req.query;
-    if (queries.hasOwnProperty("command")) {
-        console.log(queries["command"])
-        commandsToIssue.push(queries["command"])
+    if (queries["type"] == "setprio") {
+        let priority = queries["prio"]
+        switch(priority) {
+        case "low":
+            commandsToIssue.push(blink.Commands.SetLowPriority(queries["addr"]))
+            break;
+        case "med":
+            commandsToIssue.push(blink.Commands.SetMedPriority(queries["addr"]))
+            break;
+        case "high":
+            commandsToIssue.push(blink.Commands.SetHighPriority(queries["addr"]))
+            break;
+        }
+
         res.send(blink.CreateResponse("Success", null))
+        console.log(commandsToIssue)
+        return
     }
+
+    
 
     res.send(blink.CreateResponse("Fail", "No command found."))
 })
