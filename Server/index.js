@@ -106,7 +106,7 @@ app.get('/publicapi/lastrouterupdatetime', (_, res) => {
     res.send(res.send(blink.CreateResponse("Success", updates.LastUpdatedAt)))
 })
 
-app.post('/publicapi/postcommand', (req, res) => {
+app.get('/publicapi/postcommand', (req, res) => {
     var queries = req.query;
     if (queries["type"] == "setprio") {
         let priority = queries["prio"]
