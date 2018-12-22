@@ -26,7 +26,7 @@ var commandsToIssue = []
 app.post('/router_update', (req, res) => {
     console.log("Req:", req.body);
     if (req.body.hasOwnProperty("bandwidth")) {
-        if (!updates.hasOwnProperty("bandwidth")) {
+        if (!updates.Updates.hasOwnProperty("bandwidth")) {
             updates.Updates["bandwidth"] = {}
         }
 
@@ -44,7 +44,6 @@ app.post('/router_update', (req, res) => {
 
     if (req.body.hasOwnProperty("devices")) {
         updates.Updates["devices"] = req.body.devices
-        console.log()
     }
 
     var date = new Date();
