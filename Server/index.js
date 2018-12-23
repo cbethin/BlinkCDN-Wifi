@@ -20,7 +20,7 @@ var updates = {
     "LastUpdatedAt": null
 }
 
-var customNames = {"38:71:de:b9:c7:fd": "Avery's iPhone"}
+var customNames = {}
 
 var commandsToIssue = []
 
