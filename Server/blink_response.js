@@ -86,7 +86,10 @@ Commands.SetHighPriority = (addr) => {
 }
 
 Commands.ResetPrio = () => {
-    removeAddrFromPriorities(addr)
+    lowprioAddrs = []
+    medprioAddrs = []
+    highprioAddrs = []
+    
     return "/root/scripts/resetprio.sh"
 }
 
