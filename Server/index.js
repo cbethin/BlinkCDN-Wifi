@@ -139,7 +139,7 @@ app.get('/publicapi/postcommand', (req, res) => {
         return
     } else if (queries["type"] == "setname") {
         if (queries["mac"] != undefined && queries["name"] != undefined) {
-            customNames[queries[mac]] = queries["name"]
+            customNames[queries["mac"]] = queries["name"]
         }
         res.send(blink.CreateResponse("Success", null))
     }
