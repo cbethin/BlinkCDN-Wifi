@@ -20,6 +20,8 @@ var updates = {
     "LastUpdatedAt": null
 }
 
+var customNames = {"38:71:de:b9:c7:fd": "Avery's iPhone"}
+
 var commandsToIssue = []
 
 // ROUTER HANDLING FUNCTIONS
@@ -97,6 +99,9 @@ app.get('/publicapi/publiccondev', (_, res) => {
     if (updates.Updates.hasOwnProperty("devices")) {
         for (i in updates.Updates.devices) {
             updates.Updates.devices[i].priority = blink.getPriorityForAddr(updates.Updates.devices[i].ip)
+            if (customNames[updates.Updates.devices[i].mac] != undefined) {
+                updates.Updates.devices[i].name = customNames[updates.Updates.devices[i].mac]
+            }
         }
 
         res.send(blink.CreateResponse("Success", updates.Updates.devices))
