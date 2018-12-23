@@ -57,11 +57,14 @@ generateSetPrioCommandString = () => {
     return output
 }
 
-Commands.SetLowPriority = (addr) => {
-    // Remove addr from  priorities
+removeAddrFromPriorities = (addr) => {
     lowprioAddrs = lowprioAddrs.filter((val, index, arr) => { return val != addr })
     medprioAddrs = medprioAddrs.filter((val, index, arr) => { return val != addr })
     highprioAddrs = highprioAddrs.filter((val, index, arr) => { return val != addr })
+}
+
+Commands.SetLowPriority = (addr) => {
+    removeAddrFromPriorities(addr)
 
     // Add addr to right priority and output the command
     lowprioAddrs.push(addr)
@@ -69,24 +72,21 @@ Commands.SetLowPriority = (addr) => {
 };
 
 Commands.SetMedPriority = (addr) => {
-    lowprioAddrs = lowprioAddrs.filter((val, index, arr) => { return val != addr })
-    medprioAddrs = medprioAddrs.filter((val, index, arr) => { return val != addr })
-    highprioAddrs = highprioAddrs.filter((val, index, arr) => { return val != addr })
+    removeAddrFromPriorities(addr)
 
     medprioAddrs.push(addr)
     return generateSetPrioCommandString()
 };
 
 Commands.SetHighPriority = (addr) => {
-    lowprioAddrs = lowprioAddrs.filter((val, index, arr) => { return val != addr })
-    medprioAddrs = medprioAddrs.filter((val, index, arr) => { return val != addr })
-    highprioAddrs = highprioAddrs.filter((val, index, arr) => { return val != addr })
+    removeAddrFromPriorities(addr)
 
     highprioAddrs.push(addr)
     return generateSetPrioCommandString()
 }
 
 Commands.ResetPrio = () => {
+    removeAddrFromPriorities(addr)
     return "/root/scripts/resetprio.sh"
 }
 
