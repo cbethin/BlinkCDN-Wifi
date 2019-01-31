@@ -3,11 +3,13 @@
 #include <thread>
 #include <unistd.h>
 #include "external/curl-client.hpp"
+#include "external/json.hpp"
 
 #include "models.hh"
 #include "packetcap.hh"
 
 using namespace std;
+using JSON = nlohmann::json;
 
 int main(int argc, char*argv[]) {
     // Setup router
@@ -25,19 +27,24 @@ int main(int argc, char*argv[]) {
     while(true) {
         if (thisTime > nextTime) {
             // Update server
-            JSON output;
-            output["bandwidth"] = packetProcessor.pullAndClearBandwidthJson();
-            r.updateDevicesList();
-            r.updateActiveIPList();
-            output["devices"] = r.getDevicesAsJsonArray();
+            try {
+                JSON output;
+                output["bandwidth"] = packetProcessor.pullAndClearBandwidthJson();
+                r.updateDevicesList();
+                r.updateActiveIPList();
+                output["devices"] = r.getDevicesAsJsonArray();
 
-            client.sendData(output.dump());
-            nextTime += std::chrono::milliseconds(1000);
+                client.sendData(output.dump());
+                nextTime += std::chrono::milliseconds(1000);
 
-            JSON j;
-            j["Data"] = "request";
-            requestClient.sendData("");
-            r.handleResponseToRequest(requestClient.getResponse());
+                JSON j;
+                j["Data"] = "request";
+                requestClient.sendData("");
+                r.handleResponseToRequest(requestClient.getResponse());
+            } catch (JSON::exception& err){
+                cout << "Got an error " << err.what() << endl;
+            }
+            
         }
 
         thisTime = std::chrono::system_clock::now();
